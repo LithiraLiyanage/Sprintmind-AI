@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.next/
+dist/
+build/
+coverage/
+htmlcov/
+
+# Local runtime
+.env
+.env.local
+.env.*.local
+*.db
+*.sqlite
+*.sqlite3
+uploads/
+tmp/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+

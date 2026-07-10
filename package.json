@@ -1,0 +1,27 @@
+{
+  "name": "sprintmind-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SprintMind AI - Plan. Track. Summarize. Automate.",
+  "workspaces": [
+    "apps/web",
+    "packages/shared-types",
+    "packages/design-tokens"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces --include-workspace-root && python -m pip install -r apps/api/requirements-dev.txt",
+    "dev": "npm run dev --workspace @sprintmind/web",
+    "dev:web": "npm run dev --workspace @sprintmind/web",
+    "dev:api": "python -m uvicorn app.main:app --reload --app-dir apps/api",
+    "build": "npm run build --workspace @sprintmind/web",
+    "test": "npm run test --workspace @sprintmind/web && python -m pytest apps/api/tests",
+    "lint": "npm run lint --workspace @sprintmind/web && python -m ruff check apps/api/app apps/api/tests",
+    "typecheck": "npm run typecheck --workspace @sprintmind/web && python -m mypy apps/api/app",
+    "format": "npm run format --workspace @sprintmind/web && python -m ruff format apps/api/app apps/api/tests"
+  },
+  "engines": {
+    "node": ">=20.11",
+    "npm": ">=10"
+  }
+}
+
