@@ -1,94 +1,162 @@
-# SprintMind AI
+<div align="center">
 
-**Plan. Track. Summarize. Automate.**
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=32&pause=900&color=00D4FF&center=true&vCenter=true&width=900&lines=SprintMind+AI+%F0%9F%A7%A0;Multi-Agent+Jira+Workflow+Intelligence;Plan.+Track.+Summarize.+Automate.;Approval-first+AI+Project+Management" alt="SprintMind AI animated title" />
 
-SprintMind AI is a premium AI project-management chatbot and workflow platform for Jira-connected teams. The codebase is a production-oriented monorepo with a Next.js frontend, FastAPI backend, async SQLAlchemy persistence, demo data, approval-first workflow execution, and Jira/OpenAI integration points.
+<p>
+  <b>Turn every conversation into an intelligent project workflow.</b>
+</p>
 
-## What is included
+<p>
+  <img src="https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=nextdotjs" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=111" />
+  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi" />
+  <img src="https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenAI-AI%20Agents-412991?style=for-the-badge&logo=openai" />
+</p>
 
-- Next.js App Router frontend with a dark-first SaaS interface, responsive application shell, command palette, dashboard, chat workspace, sprint board, reports, settings, and generic complete states for all required product pages.
-- FastAPI backend with authentication, HttpOnly cookie tokens, organization-aware access control, demo seed data, conversations, streaming events, approvals, memories, documents, notifications, reports, audit logs, and Jira integration architecture.
-- PostgreSQL/pgvector, Redis, Celery, Alembic, Docker Compose, GitHub Actions, frontend and backend tests, lint/type-check scripts, and a complete `.env.example`.
-- A clearly labelled demo mode that works without Jira credentials and never pretends to be a real Jira connection.
+</div>
 
-## Prerequisites
+---
 
-- Node.js 20+
-- Python 3.11+
-- Docker Desktop for PostgreSQL, Redis, workers, and full-stack local development
-- OpenAI API key for real AI responses
-- Atlassian OAuth app credentials for real Jira Cloud integration
+## ✨ What is SprintMind AI?
 
-## Local setup
+**SprintMind AI** is a premium full-stack AI project-management platform for Jira-connected teams. It combines a polished SaaS frontend, FastAPI backend, multi-agent workflow execution, sprint analytics, memory, audit trails, and human approval gates before external Jira writes.
+
+> Built as a portfolio-grade AI engineering product with real-world architecture, demo mode, security boundaries, and production-minded workflow design.
+
+---
+
+## 🚀 Core Highlights
+
+- 🤖 **Multi-agent workflow system** with Supervisor, Jira, Sprint Planning, Risk, Memory, Summarization, and Workflow agents
+- 💬 **AI chat workspace** for natural-language project operations
+- ✅ **Human approval gate** before Jira write actions
+- 📊 **Sprint analytics dashboard** with velocity, blockers, workload, and automation activity
+- 🧠 **Persistent project memory** for rules, ownership, and decisions
+- 🔐 **Security-first backend** with HttpOnly auth, encrypted Jira tokens, RBAC-ready structure, and audit logs
+- 🧾 **Workflow timeline** for tools, approvals, evidence, retries, and final output
+- 🧪 **Demo mode included** so the product works without real Jira credentials
+
+---
+
+## 🧭 Workflow Graph
+
+```mermaid
+flowchart TD
+    U["User Request"] --> S["Supervisor Agent"]
+    S --> I["Intent Detection"]
+    S --> J["Jira Agent"]
+    S --> P["Sprint Planning Agent"]
+    S --> R["Risk Analysis Agent"]
+    S --> M["Memory Agent"]
+    S --> A["Summarization Agent"]
+    J --> E["Evidence + Validation"]
+    P --> E
+    R --> E
+    M --> E
+    A --> E
+    E --> H["Human Approval Gate"]
+    H --> W["External Jira Write"]
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js 15, React 19, TypeScript, Tailwind CSS |
+| UI/UX | Framer Motion, Lucide Icons, Recharts, responsive app shell |
+| Backend | FastAPI, Python, Pydantic, SQLAlchemy Async |
+| Database | PostgreSQL, SQLite demo mode, Alembic migrations |
+| AI | OpenAI integration points, deterministic demo fallback |
+| Jobs | Redis, Celery, scheduled reconciliation architecture |
+| DevOps | Docker Compose, GitHub Actions, Makefile |
+| Testing | Vitest, Testing Library, Pytest, Ruff, TypeScript checks |
+
+---
+
+## 📦 Monorepo Structure
+
+```text
+sprintmind-ai/
+├─ apps/
+│  ├─ web/              # Next.js SaaS frontend
+│  └─ api/              # FastAPI backend
+├─ packages/
+│  ├─ shared-types/     # Shared TypeScript contracts
+│  └─ design-tokens/    # Design system tokens
+├─ docs/                # Architecture + security docs
+├─ infrastructure/      # Database/init support
+├─ docker-compose.yml
+├─ Makefile
+└─ README.md
+```
+
+---
+
+## ⚡ Quick Start
 
 ```bash
+git clone https://github.com/YOUR_USERNAME/sprintmind-ai.git
+cd sprintmind-ai
+
 cp .env.example .env
 npm run install:all
 docker compose up postgres redis
+```
+
+Run the API:
+
+```bash
 python -m uvicorn app.main:app --reload --app-dir apps/api
+```
+
+Run the web app:
+
+```bash
 npm run dev --workspace @sprintmind/web
 ```
 
 Open:
 
-- Web: http://localhost:3000
-- API: http://localhost:8000
-- API docs: http://localhost:8000/docs
-
-On Windows PowerShell, if `npm` is blocked by execution policy, use `cmd /c npm run install:all` and `cmd /c npm run dev --workspace @sprintmind/web`.
-
-## Database and migrations
-
-The Docker Compose database uses PostgreSQL 16 with pgvector enabled.
-
-```bash
-docker compose up postgres redis
-cd apps/api
-alembic upgrade head
+```text
+Web:      http://localhost:3000
+API:      http://localhost:8000
+API Docs: http://localhost:8000/docs
 ```
 
-For quick local demos the backend can use SQLite by setting:
+---
+
+## 🪟 Windows PowerShell Note
+
+If PowerShell blocks npm scripts, run commands like this:
+
+```powershell
+cmd /c npm run install:all
+cmd /c npm run dev --workspace @sprintmind/web
+```
+
+---
+
+## 🔑 Environment Setup
 
 ```env
 DATABASE_URL=sqlite+aiosqlite:///./sprintmind.db
-```
 
-## OpenAI setup
-
-Set:
-
-```env
-OPENAI_API_KEY=...
+OPENAI_API_KEY=
 OPENAI_MODEL=gpt-5-mini
 OPENAI_EMBEDDING_MODEL=text-embedding-3-large
-```
 
-When no key is configured, SprintMind AI uses deterministic demo agent responses and marks them as demo-mode output.
-
-## Atlassian OAuth setup
-
-Create an Atlassian developer OAuth 2.0 app and set:
-
-```env
-ATLASSIAN_CLIENT_ID=...
-ATLASSIAN_CLIENT_SECRET=...
+ATLASSIAN_CLIENT_ID=
+ATLASSIAN_CLIENT_SECRET=
 ATLASSIAN_REDIRECT_URI=http://localhost:8000/api/v1/jira/callback
 ATLASSIAN_SCOPES=read:jira-work write:jira-work read:jira-user offline_access
 ```
 
-The backend stores Jira tokens encrypted and never exposes them to the browser. Jira write operations always produce approval requests before execution.
+---
 
-## Jira webhooks
-
-Configure Jira webhooks to call:
-
-```text
-POST /api/v1/jira/webhooks
-```
-
-Webhook events are deduplicated by idempotency key, stored, audited, and queued for cache refresh. Scheduled reconciliation is provided through Celery Beat.
-
-## Common commands
+## 🧪 Common Commands
 
 ```bash
 make setup
@@ -101,31 +169,35 @@ make build
 make docker-up
 ```
 
-## Architecture
+Or directly:
 
-```text
-apps/web      Next.js, Tailwind, shadcn-style UI, React Query, Zustand
-apps/api      FastAPI, async SQLAlchemy, Alembic, Celery, Jira/OpenAI services
-packages      shared TypeScript types and design tokens
-infrastructure Docker/Postgres support
-docs          architecture and security notes
+```bash
+npm run test
+npm run lint
+npm run build
+npm run typecheck
 ```
 
-## Security notes
+---
 
-- Access and refresh tokens are set as HttpOnly cookies.
-- Refresh-token rotation and revocation tables are included.
-- Passwords are hashed with Argon2.
-- Jira tokens are encrypted before storage.
-- Organization IDs are enforced on user-owned resources.
-- AI tool calls are validated server-side and cannot bypass permissions.
-- Sensitive external write actions require explicit approval.
-- Uploaded documents and Jira content are treated as untrusted data.
+## 🔐 Security Model
 
-## Troubleshooting
+- HttpOnly cookie-based auth
+- Refresh token rotation tables
+- Argon2 password hashing
+- Encrypted Jira token storage
+- Organization-scoped data access
+- Server-side validation for AI tool calls
+- Approval-first external writes
+- Audit logs for workflow activity
+- Uploaded documents treated as untrusted input
 
-- If the frontend cannot reach the backend, confirm `NEXT_PUBLIC_API_URL` points to `http://localhost:8000`.
-- If OAuth fails, confirm the Atlassian redirect URI exactly matches `.env`.
-- If migrations fail with pgvector, run Docker Compose so the `pgvector/pgvector:pg16` image is used.
-- If PowerShell blocks npm, run commands through `cmd /c npm ...`.
+---
 
+<div align="center">
+
+### ⭐ If you like this project, give it a star!
+
+<b>Plan. Track. Summarize. Automate.</b>
+
+</div>
