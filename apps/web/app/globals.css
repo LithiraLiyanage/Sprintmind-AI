@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 216 50% 98%;
+  --foreground: 222 47% 11%;
+  --muted: 214 32% 91%;
+  --muted-foreground: 215 16% 44%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --border: 214 32% 84%;
+  --primary: 225 100% 58%;
+  --primary-foreground: 210 40% 98%;
+  --accent: 187 86% 43%;
+  --success: 142 71% 45%;
+  --warning: 38 92% 50%;
+  --danger: 0 84% 60%;
+}
+
+.dark {
+  --background: 228 64% 5%;
+  --foreground: 210 40% 98%;
+  --muted: 221 36% 14%;
+  --muted-foreground: 215 20% 65%;
+  --card: 222 47% 11%;
+  --card-foreground: 210 40% 98%;
+  --border: 215 20% 24%;
+  --primary: 225 100% 65%;
+  --primary-foreground: 222 47% 11%;
+  --accent: 187 86% 53%;
+  --success: 142 71% 45%;
+  --warning: 38 92% 50%;
+  --danger: 0 84% 60%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: hsl(var(--background));
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(34, 211, 238, 0.12), transparent 28rem),
+    radial-gradient(circle at 82% 4%, rgba(79, 124, 255, 0.14), transparent 28rem),
+    linear-gradient(135deg, hsl(var(--background)), hsl(var(--background)));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+body::before {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  opacity: 0.28;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.32);
+}
+
+.glass {
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: color-mix(in srgb, hsl(var(--card)) 82%, transparent);
+  box-shadow: 0 18px 70px rgba(2, 6, 23, 0.26);
+  backdrop-filter: blur(18px);
+}
+
+.light .glass {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.mesh-line {
+  background-image:
+    linear-gradient(90deg, rgba(34, 211, 238, 0.2), transparent 40%, rgba(79, 124, 255, 0.28)),
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
