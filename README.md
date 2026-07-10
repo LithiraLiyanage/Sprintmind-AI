@@ -194,6 +194,24 @@ npm run typecheck
 
 ---
 
+## 👨‍💻 Developer
+
+<div align="center">
+
+### Lithira Liyanage
+
+**AI Engineer | AI & ML Enthusiast | IT Undergraduate**
+
+<br/>
+
+[![GitHub](https://img.shields.io/badge/GitHub-LithiraLiyanage-181717?style=for-the-badge\&logo=github)](https://github.com/LithiraLiyanage)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Lithira_Liyanage-0A66C2?style=for-the-badge\&logo=linkedin)](https://linkedin.com/in/lithira-liyanage-667b99403)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Website-2F7D59?style=for-the-badge\&logo=vercel)](https://lithira-liyanage.vercel.app)
+[![Medium](https://img.shields.io/badge/Medium-Articles-000000?style=for-the-badge\&logo=medium)](https://medium.com/@lithiraliyanage666)
+
+</div>
+
+
 <div align="center">
 
 ### ⭐ If you like this project, give it a star!
