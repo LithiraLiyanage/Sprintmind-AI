@@ -1,0 +1,7 @@
+<svg width="220" height="56" viewBox="0 0 220 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="4" width="48" height="48" rx="12" stroke="currentColor" stroke-width="2"/>
+  <path d="M16 37C22 45 39 42 39 30C39 18 20 20 20 28C20 35 34 31 37 20" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/>
+  <path d="M36.5 20H44V27.5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="64" y="33" fill="currentColor" font-family="Inter, Arial" font-size="22" font-weight="700">SprintMind AI</text>
+</svg>
+
